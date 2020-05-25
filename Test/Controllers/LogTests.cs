@@ -1,10 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Logger.Controllers;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging.Abstractions;
 using NUnit.Framework;
-using NUnit.Framework.Internal;
-using WebApplication.Controllers; 
 
-namespace Tests.Controllers
+namespace Test.Controllers
 {
     public class LogTest
     {
@@ -14,7 +13,7 @@ namespace Tests.Controllers
         public void Setup()
         {
             var logger = new NullLogger<LogController>();
-            this._logController = new LogController(logger);
+            _logController = new LogController(logger);
         }
 
         [Test]
